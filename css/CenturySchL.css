@@ -1,0 +1,79 @@
+@font-face {
+	font-family: "Century Schoolbook L";
+	src: local("CenturySchL-Roma"),
+		local("Century Schoolbook L Roman"),
+		url("../fonts/CenturySchL-Roma.woff") format('woff');
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	unicode-range: U+20-7E, U+A1-AC, U+AE-B4, U+B6-17F,
+		U+192, U+218-219, U+2C6-2C7, U+2D8-2DD,
+		U+394, U+3BC, U+400-45F, U+48C-4C4,
+		U+4C7-4C8, U+4CB-4CC, U+4D0-4F5, U+4F8-4F9,
+		U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022,
+		U+2026, U+2030, U+2039-203A, U+2044,
+		U+20AC, U+2116, U+2122, U+2202,
+		U+2211-2212, U+221A, U+221E, U+2260,
+		U+2264-2265, U+25CA, U+F6C4-F6C8, U+FB01-FB02,
+		U+FFFD;
+}
+
+@font-face {
+	font-family: "Century Schoolbook L";
+	src: local("CenturySchL-Bold"),
+		local("Century Schoolbook L Bold"),
+		url("../fonts/CenturySchL-Bold.woff") format('woff');
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	unicode-range: U+20-7E, U+A1-AC, U+AE-B4, U+B6-17F,
+		U+192, U+218-219, U+2C6-2C7, U+2D8-2DD,
+		U+394, U+3BC, U+400-45F, U+48C-4C4,
+		U+4C7-4C8, U+4CB-4CC, U+4D0-4F5, U+4F8-4F9,
+		U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022,
+		U+2026, U+2030, U+2039-203A, U+2044,
+		U+20AC, U+2116, U+2122, U+2202,
+		U+2211-2212, U+221A, U+221E, U+2260,
+		U+2264-2265, U+25CA, U+F6C4-F6C8, U+FB01-FB02,
+		U+FFFD;
+}
+
+@font-face {
+	font-family: "Century Schoolbook L";
+	src: local("CenturySchL-Ital"),
+		local("Century Schoolbook L Italic"),
+		url("../fonts/CenturySchL-Ital.woff") format('woff');
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	unicode-range: U+20-7E, U+A1-AC, U+AE-B4, U+B6-17F,
+		U+192, U+218-219, U+2C6-2C7, U+2D8-2DD,
+		U+394, U+3BC, U+400-45F, U+48C-4C4,
+		U+4C7-4C8, U+4CB-4CC, U+4D0-4F5, U+4F8-4F9,
+		U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022,
+		U+2026, U+2030, U+2039-203A, U+2044,
+		U+20AC, U+2116, U+2122, U+2202,
+		U+2211-2212, U+221A, U+221E, U+2260,
+		U+2264-2265, U+25CA, U+F6C4-F6C8, U+FB01-FB02,
+		U+FFFD;
+}
+
+@font-face {
+	font-family: "Century Schoolbook L";
+	src: local("CenturySchL-BoldItal"),
+		local("Century Schoolbook L Bold Italic"),
+		url("../fonts/CenturySchL-BoldItal.woff") format('woff');
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: italic;
+	unicode-range: U+20-7E, U+A1-AC, U+AE-B4, U+B6-17F,
+		U+192, U+218-219, U+2C6-2C7, U+2D8-2DD,
+		U+394, U+3BC, U+400-45F, U+48C-4C4,
+		U+4C7-4C8, U+4CB-4CC, U+4D0-4F5, U+4F8-4F9,
+		U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022,
+		U+2026, U+2030, U+2039-203A, U+2044,
+		U+20AC, U+2116, U+2122, U+2202,
+		U+2211-2212, U+221A, U+221E, U+2260,
+		U+2264-2265, U+25CA, U+F6C4-F6C8, U+FB01-FB02,
+		U+FFFD;
+}
