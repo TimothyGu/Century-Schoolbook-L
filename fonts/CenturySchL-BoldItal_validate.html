@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<title>Report: CenturySchL-BoldItal.woff</title>
+		<style type="text/css">
+body {
+	background-color: #e5e5e5;
+	padding: 15px 15px 0px 15px;
+	margin: 0px;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h2.readError {
+	background-color: red;
+	color: white;
+	margin: 20px 15px 20px 15px;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 25px;
+}
+
+/* info blocks */
+
+.infoBlock {
+	background-color: white;
+	margin: 0px 0px 15px 0px;
+	padding: 15px;
+	border-radius: 5px;
+}
+
+h3.infoBlockTitle {
+	font-size: 20px;
+	margin: 0px 0px 15px 0px;
+	padding: 0px 0px 10px 0px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+h4.infoBlockTitle {
+	font-size: 17px;
+	margin: 0px 0px 15px 0px;
+	padding: 0px 0px 10px 0px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+table.report {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 14px;
+}
+
+table.report tr {
+	border-top: 1px solid white;
+}
+
+table.report tr.testPass, table.report tr.testReportPass {
+	background-color: #c8ffaf;
+}
+
+table.report tr.testError, table.report tr.testReportError {
+	background-color: #ffc3af;
+}
+
+table.report tr.testWarning, table.report tr.testReportWarning {
+	background-color: #ffe1af;
+}
+
+table.report tr.testNote, table.report tr.testReportNote {
+	background-color: #96e1ff;
+}
+
+table.report tr.testTraceback, table.report tr.testReportTraceback {
+	background-color: red;
+	color: white;
+}
+
+table.report td {
+	padding: 7px 5px 7px 5px;
+	vertical-align: top;
+}
+
+table.report td.title {
+	width: 80px;
+	text-align: right;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+table.report td.testReportResultCount {
+	width: 100px;
+}
+
+table.report td.toggleButton {
+	text-align: center;
+	width: 50px;
+	border-left: 1px solid white;
+	cursor: pointer;
+}
+
+.infoBlock td p.info {
+	font-size: 12px;
+	font-style: italic;
+	margin: 5px 0px 0px 0px;
+}
+
+/* SFNT table */
+
+table.sfntTableData {
+	font-size: 14px;
+	width: 100%;
+	border-collapse: collapse;
+	padding: 0px;
+}
+
+table.sfntTableData th {
+	padding: 5px 0px 5px 0px;
+	text-align: left
+}
+
+table.sfntTableData tr.uncompressed {
+	background-color: #ffc3af;
+}
+
+table.sfntTableData td {
+	width: 20%;
+	padding: 5px 0px 5px 0px;
+	border: 1px solid #e5e5e5;
+	border-left: none;
+	border-right: none;
+	font-family: Consolas, Menlo, "Vera Mono", Monaco, monospace;
+}
+
+pre {
+	font-size: 12px;
+	font-family: Consolas, Menlo, "Vera Mono", Monaco, monospace;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Metadata */
+
+.metadataElement {
+	background: rgba(0, 0, 0, 0.03);
+	margin: 10px 0px 10px 0px;
+	border: 2px solid #d8d8d8;
+	padding: 10px;
+}
+
+h5.metadata {
+	font-size: 14px;
+	margin: 5px 0px 10px 0px;
+	padding: 0px 0px 5px 0px;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+h6.metadata {
+	font-size: 12px;
+	font-weight: normal;
+	margin: 10px 0px 10px 0px;
+	padding: 0px 0px 5px 0px;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+table.metadata {
+	font-size: 12px;
+	width: 100%;
+	border-collapse: collapse;
+	padding: 0px;
+}
+
+table.metadata td.key {
+	width: 5em;
+	padding: 5px 5px 5px 0px;
+	border-right: 1px solid #d8d8d8;
+	text-align: right;
+	vertical-align: top;
+}
+
+table.metadata td.value {
+	padding: 5px 0px 5px 5px;
+	border-left: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+}
+
+p.metadata {
+	font-size: 12px;
+	font-style: italic;
+}
+}
+</style>
+		<script type="text/javascript">
+
+//<![CDATA[
+	function testResultToggleButtonHit(buttonID, className) {
+		// change the button title
+		var element = document.getElementById(buttonID);
+		if (element.innerHTML == "Show" ) {
+			element.innerHTML = "Hide";
+		}
+		else {
+			element.innerHTML = "Show";
+		}
+		// toggle the elements
+		var elements = getTestResults(className);
+		for (var e = 0; e < elements.length; ++e) {
+			toggleElement(elements[e]);
+		}
+		// toggle the info blocks
+		toggleInfoBlocks();
+	}
+
+	function getTestResults(className) {
+		var rows = document.getElementsByTagName("tr");
+		var found = Array();
+		for (var r = 0; r < rows.length; ++r) {
+			var row = rows[r];
+			if (row.className == className) {
+				found[found.length] = row;
+			}
+		}
+		return found;
+	}
+
+	function toggleElement(element) {
+		if (element.style.display != "none" ) {
+			element.style.display = "none";
+		}
+		else {
+			element.style.display = "";
+		}
+	}
+
+	function toggleInfoBlocks() {
+		var tables = document.getElementsByTagName("table")
+		for (var t = 0; t < tables.length; ++t) {
+			var table = tables[t];
+			if (table.className == "report") {
+				var haveVisibleRow = false;
+				var rows = table.rows;
+				for (var r = 0; r < rows.length; ++r) {
+					var row = rows[r];
+					if (row.style.display == "none") {
+						var i = 0;
+					}
+					else {
+						haveVisibleRow = true;
+					}
+				}
+				var div = table.parentNode;
+				if (haveVisibleRow == true) {
+					div.style.display = "";
+				}
+				else {
+					div.style.display = "none";
+				}
+			}
+		}
+	}
+//]]>
+</script>
+	</head>
+	<body>
+		<div class="infoBlock">
+			<h3 class="infoBlockTitle">File Information</h3>
+			<table class="report">
+				<tr>
+					<td class="title">FILE</td>
+					<td>CenturySchL-BoldItal.woff</td>
+				</tr>
+				<tr>
+					<td class="title">DIRECTORY</td>
+					<td />
+				</tr>
+			</table>
+		</div>
+		<div class="infoBlock">
+			<h3 class="infoBlockTitle">Results for 133 Tests</h3>
+			<table class="report">
+				<tr class="testReportPass">
+					<td class="title">PASS</td>
+					<td class="testReportResultCount">132</td>
+					<td />
+					<td class="toggleButton" id="testResultPASSToggleButton" onclick="testResultToggleButtonHit('testResultPASSToggleButton', 'testPass');">Hide</td>
+				</tr>
+				<tr class="testReportWarning">
+					<td class="title">WARNING</td>
+					<td class="testReportResultCount">0</td>
+					<td />
+					<td class="toggleButton" id="testResultWARNINGToggleButton" onclick="testResultToggleButtonHit('testResultWARNINGToggleButton', 'testWarning');">Hide</td>
+				</tr>
+				<tr class="testReportError">
+					<td class="title">ERROR</td>
+					<td class="testReportResultCount">0</td>
+					<td />
+					<td class="toggleButton" id="testResultERRORToggleButton" onclick="testResultToggleButtonHit('testResultERRORToggleButton', 'testError');">Hide</td>
+				</tr>
+				<tr class="testReportNote">
+					<td class="title">NOTE</td>
+					<td class="testReportResultCount">1</td>
+					<td />
+					<td class="toggleButton" id="testResultNOTEToggleButton" onclick="testResultToggleButtonHit('testResultNOTEToggleButton', 'testNote');">Hide</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoBlock">
+			<h4 class="infoBlockTitle">Header</h4>
+			<table class="report">
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The signature is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The flavor is a correct value.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The length defined in the header is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The value in the reserved field is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The total sfnt size is valid.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The number of tables defined in the header is valid.</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoBlock">
+			<h4 class="infoBlockTitle">Data Blocks</h4>
+			<table class="report">
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The length and offset are appropriately set for empty metadata.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The length and offset are appropriately set for empty private data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The table data begins in the required position.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The table data ends in the required position.</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoBlock">
+			<h4 class="infoBlockTitle">Table Directory</h4>
+			<table class="report">
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The table directory structure is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GSUB" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cmap" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cvt " table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "gasp" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hmtx" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "maxp" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "prep" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "webf" table begins on a 4-byte boundary.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The sfnt data ends with proper padding.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "webf" table is padded with null bytes.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GSUB" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cmap" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cvt " table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "gasp" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hmtx" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "maxp" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "prep" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "webf" table directory entry has a valid offset and length.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GSUB" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cmap" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cvt " table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "gasp" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hmtx" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "maxp" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "prep" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "webf" table directory entry has proper compLength and origLength values.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GSUB" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cmap" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hmtx" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "prep" table directory entry has a proper original length compared to the actual decompressed data.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GSUB" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cmap" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cvt " table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "gasp" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hmtx" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "maxp" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "prep" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "webf" table directory entry original checksum is correct.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table checkSumAdjustment is valid.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The table directory entries are stored in the proper order.</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoBlock">
+			<h4 class="infoBlockTitle">Table Data</h4>
+			<table class="report">
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "FFTM" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GDEF" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GPOS" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "GSUB" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "OS/2" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "cmap" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "fpgm" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "glyf" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "head" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hhea" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "hmtx" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "loca" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "name" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "post" table data can be decompressed with zlib.</td>
+				</tr>
+				<tr class="testPass">
+					<td class="title">PASS</td>
+					<td>The "prep" table data can be decompressed with zlib.</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoBlock">
+			<h4 class="infoBlockTitle">Metadata</h4>
+			<table class="report">
+				<tr class="testNote">
+					<td class="title">NOTE</td>
+					<td>No metadata to test.</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

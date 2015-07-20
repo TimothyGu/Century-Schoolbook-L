@@ -17,33 +17,18 @@ script. That script was originally found in [LilyPond][3].
 [2]: https://fontforge.github.io
 [3]: http://git.savannah.gnu.org/gitweb/?p=lilypond.git;a=blob;f=scripts/auxiliar/pfx2ttf.fontforge;hb=2820653d0e8f00674fd986ad92a6e3ca4342ee37
 
-WOFF fonts
-----------
+TTF/EOT/SVG/WOFF/WOFF2 fonts
+----------------------------
 
-THe WOFF fonts are generated with [Fontie][6] from the OTF files, which is
-only tool I tested that works.
+These fonts were generated in two steps:
 
-Others I tested:
+1. Generate TTF fonts with FontForge (change `.otf` to `.ttf` in the
+   `pfx2ttf.fontforge` script).
+2. Upload the generated fonts to FontSquirrel.
 
-- FontForge: Chrome and Firefox [refuses to render][5]; fails [validation][9]
-  too.
-- [sfnt2woff][4]: works for Roman and bold, but Chrome refuses to render
-  italic styles.
-- [FontSquirrel][7]: reports 0 glyphs; stuck on conversion forever.
-- [ttf2woff][8]: fails [validation][9].
-
-[4]: https://people.mozilla.org/~jkew/woff/
-[5]: https://github.com/fontforge/fontforge/issues/926
-[6]: https://fontie.flowyapps.com/
-[7]: http://www.fontsquirrel.com/tools/webfont-generator
-[8]: https://github.com/fontello/ttf2woff
-[9]: https://github.com/typesupply/woffTools
-
-Other formats
--------------
-
-You can convert these fonts to SVG or EOT if you’d like, but there are being
-deprecated, and I’m lazy so they are not included.
+The initial generated TTF fonts are not included, but the TTFs output from
+FontSquirrel are, for absolute compatibility with the other fonts generated
+by FontSquirrel.
 
 TODO
 ----
